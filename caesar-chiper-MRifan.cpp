@@ -1,37 +1,112 @@
-#include<iostream>
-#include<stdio.h>
-#include<string.h>
+#include <iostream>
+#include <stdio.h>
+#include <string.h>
+#include <conio.h>
+#include <stdlib.h>
+#include<time.h> 
 using namespace std;
-int main() {
-   
-   int i, j, length,choice,key;
-   scanf("%d", &key);
-   char msg[100];
-   gets(msg);
-   fflush(stdin);
-   length = strlen(msg);
 
-      char ch;
-      for(int i = 0; msg[i] != '\0'; ++i) {
-         ch = msg[i];
-         //encrypt for lowercase letter
-         if (ch >= 'a' && ch <= 'z'){
-            ch = ch + key;
-            if (ch > 'z') {
-               ch = ch - 'z' + 'a' - 1;
-            }  
-            msg[i] = ch;
+
+
+int main(){
+    char a;
+    char word[100];
+    char sol[256]={};
+    int i,j,attempts=0;
+   char category[3][100]={"fruit","animal","country"};
+   char fruit[6][100]={"apple","banana","watermelon","guava","orange"};
+   char animal[5][100]={"dog", "cat","elephant","tiger","bird"};
+   char country[6][100]={"indonesia","france","usa","china","japan","korea"};
+   
+   int random;
+   int subRandom;
+
+   srand(time(0));
+   random = rand()%3;
+
+   
+   printf("%s\n", category[random]);
+
+   if(strcmp(category[random],"animal")==0){
+      subRandom = rand() % 5;
+      strcpy(word, animal[subRandom]);
+   }
+   else if(strcmp(category[random],"fruit")==0){
+      subRandom = rand() % 5;
+      strcpy(word, fruit[subRandom]);
+      
+   }
+   else if(strcmp(category[random],"country")==0){
+      subRandom = rand() % 5;
+      strcpy(word, country[subRandom]);
+      
+   }
+
+
+
+    
+   attempts=strlen(word);
+    
+   for(i=0;i<25;i++)
+        printf("\n");
+
+   
+    i=0;
+    while(word[i]!='\0')
+        i++;
+
+   for(j=0;j<i;j++)
+    {
+        sol[j]='-';
+    }
+   
+   
+   do{
+      printf("You have %d lives\n", attempts);
+      printf("You have %d letters\n",  strlen(word));
+      sol[j]='\0';
+
+
+      printf("guess a letter: ");
+      scanf("%c", &a);
+      strlwr(&a);
+      fflush(stdin);
+
+      
+      
+      for(j=0;j<i;j++)
+         if(word[j]==a)
+         {
+            sol[j]=a;
+            attempts++;
          }
-         //encrypt for uppercase letter
-         else if (ch >= 'A' && ch <= 'Z'){
-            ch = ch + key;
-            if (ch > 'Z'){
-               ch = ch - 'Z' + 'A' - 1;
-            }
-            msg[i] = ch;
-         }
+
+
+
+      printf("\n");
+      for(j=0;j<i;j++){
+         strupr(&sol[j]);
+         printf("%c", sol[j]);
       }
-      printf("Encrypted message: %s", msg);
+      printf("\n");
+
+      attempts--;
+
+      
+      for(int x=0;x<25;x++)
+      printf("\n");
+
+      strlwr(sol);
+   } while(attempts >= 0 && strcmp(sol, word)!=0);
+   
+   
+   if(strcmp(sol, word)==0)
+      printf("\n\nYay, you did it, Congrats!!");
+
+
+   else
+      printf("\n\nThe word is : %s \n\n Aww, better luck next time :(", word);
+   
+   
    getchar();
-   return 0;
 }
