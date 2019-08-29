@@ -1,6 +1,5 @@
 Problem No 1 Problem Name: ​caesar-chiper 
  
-## History Source: [https://en.wikipedia.org/wiki/Caesar_cipher](https://en.wikipedia.org/wiki/Caesar_cipher) 
  
 The Caesar cipher is named after Julius Caesar, who, according to Suetonius, used it with a shift of three to protect messages of military significance. While Caesar's was the first recorded use of this scheme, other substitution ciphers are known to have been used earlier. 
  
@@ -12,7 +11,32 @@ The Caesar cipher is named after Julius Caesar, who, according to Suetonius, use
  
 The main reason of the Caesar Chiper is to encrypt an original text into encrypted text For example if the step 2, means every letter will be shifted to right 2 steps 
  
-A => step 2 => become C B => step 2 => become D C => step 2 => become E D => step 2 => become F E => step 2 => become G F => step 2 => become H G => step 2 => become I H => step 2 => become J I => step 2 => become K J => step 2 => become L K => step 2 => become M L => step 2 => become N M => step 2 => become O N => step 2 => become P O => step 2 => become Q P => step 2 => become R Q => step 2 => become S R => step 2 => become T S => step 2 => become U T => step 2 => become V U => step 2 => become W V => step 2 => become X W => step 2 => become Y  X => step 2 => become Z Y => step 2 => become A  Z => step 2 => become B 
+A => step 2 => become C 
+B => step 2 => become D 
+C => step 2 => become E 
+D => step 2 => become F 
+E => step 2 => become G 
+F => step 2 => become H 
+G => step 2 => become I 
+H => step 2 => become J 
+I => step 2 => become K 
+J => step 2 => become L 
+K => step 2 => become M 
+L => step 2 => become N 
+M => step 2 => become O 
+N => step 2 => become P 
+O => step 2 => become Q 
+P => step 2 => become R 
+Q => step 2 => become S 
+R => step 2 => become T 
+S => step 2 => become U 
+T => step 2 => become V 
+U => step 2 => become W 
+V => step 2 => become X 
+W => step 2 => become Y  
+X => step 2 => become Z 
+Y => step 2 => become A  
+Z => step 2 => become B 
  
 So if the plain text: 
 
@@ -37,8 +61,27 @@ Your program will accept one line consists of N and the strings. For example
  
  # Hangman Problem In this problem you will need to create a game called Hangman 
  There will three category fruit, animal, and country The program will have a list of words as follow 
- - fruit   - apple   - banana   - watermelon   - guava   - orange - animal   - dog   - cat   - elephant   - tiger   - bird - country   - indonesia   - france   - usa   - china   - japan   - korea  
+ - fruit   
+ 	- apple   
+ 	- banana   
+ 	- watermelon   
+ 	- guava   
+ 	- orange
+  - animal   
+  	- dog   
+  	- cat   
+  	- elephant   
+  	- tiger   
+  	- bird 
+  - country   
+  	- indonesia   
+  	- france   
+  	- usa   
+  	- china   
+  	- japan   
+  	- korea  
    When the program starts, the program will load all the possible words for each group, fruit, animal, country, etc. Then random a word, and show it using underscore ( _ ) 
+   
  For example the word "orange" shown as _ _ _ _ _ _ ( 6 characters ) 
  We will ask user to guess what word it is (whenever user type, it's in-case-sensitive)   The program will accept several commands. See the sample input below 
  
