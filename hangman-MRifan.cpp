@@ -62,7 +62,7 @@ int main(){
 	
 	
 	do{
-		printf("You have %d attempts\n", attempts);
+		printf("You have %d lives\n", attempts);
 		printf("You have %d letters\n",  strlen(word));
 		sol[j]='\0';
 
@@ -105,7 +105,7 @@ int main(){
 
 
 	else
-		printf("\n\nThe word is : %s \n\n Aww, better luck next time, Game Over", word);
+		printf("\n\nThe word is : %s \n\n Aww, better luck next time :(", word);
 	
 	
 	getchar();
